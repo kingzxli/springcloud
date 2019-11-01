@@ -1,0 +1,15 @@
+server:
+  port: 8002
+  
+spring:
+  application:
+    name: order
+  
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务的时候使用服务的ip地址
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/ #注册中心地址
+    fetch-registry: true   ##需要讲我的服务注册到eureka上
+    register-with-eureka: true  ##需要检索服务

@@ -1,0 +1,21 @@
+server:
+  port: 8011
+  
+spring:
+  application:
+    name: member
+  
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务的时候使用服务的ip地址
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/ #注册中心地址
+      ##defaultZone: http://localhost:9001/eureka/ ,http://localhost:9002/eureka/
+    fetch-registry: true   ##需要讲我的服务注册到eureka上
+    register-with-eureka: true  ##需要检索服务
+    
+    ##Eureka客户端向服务端发送心跳的时间间隔
+    lease-renewal-interval-in-seconds: 1  
+    ##Eureka服务端在收到最后一次心跳之后等待时间上限，超过则剔除
+    lease-expiration-duration-in-seconds: 2 

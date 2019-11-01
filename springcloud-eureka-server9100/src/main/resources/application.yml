@@ -1,0 +1,19 @@
+server:
+  port: 9001
+  
+spring:
+  application:
+    name: erueka
+  
+eureka:
+  instance:
+    hostname: eureka-server   #eureka实例的主机名
+  client:
+    fetch-registry: false  #从eureka上获取服务的注册信息
+    register-with-eureka: false #把自己注册到eureka上
+    service-url:
+      defaultZone: http://localhost:9001/eureka/   #注册中心地址,有多个注册中心时，用 ','隔开
+  server:
+    ##测试时关闭自我保护机制，保证不可用服务及时剔除
+      enable-self-preservation: false
+      eviction-interval-timer-in-ms: 2000    
