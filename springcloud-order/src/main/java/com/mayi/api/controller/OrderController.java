@@ -13,8 +13,7 @@ public class OrderController {
 	
 	@RequestMapping("/getOrder")
 	public String getOrder() {
-		String s=restTemplate.getForObject("http://MEMBER/getMember", String.class);  //url 服务名+方法名
-		return s;
+		return restTemplate.getForObject("http://MEMBER/getMember", String.class);  //url 服务名+方法名
 	}
 
 }
